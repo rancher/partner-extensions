@@ -1,5 +1,4 @@
-# "Tested & Certified -- Rancher Extension"
-## Definition and Guide 
+# Certified Partner Rancher Extensions
 
  
 
