@@ -57,8 +57,6 @@ git push origin <your_branch>
 Options for `upstream.yaml`
 | Variable | Requires | Description |
 | ------------- | ------------- |------------- |
-| ArtifactHubPackage | ArtifactHubRepo | Defines the package to pull from the defined ArtifactHubRepo
-| ArtifactHubRepo | ArtifactHubPackage | Defines the repo to access on Artifact Hub
 | AutoInstall | | Allows setting a required additional chart to deploy prior to current chart, such as a dedicated CRDs chart
 | ChartMetadata | | Allows setting/overriding the value of any valid [Chart.yaml variable](https://helm.sh/docs/topics/charts/#the-chartyaml-file)
 | DisplayName | | Sets the name the chart will be listed under in the Rancher UI
@@ -85,32 +83,6 @@ HelmRepo: https://charts.kubewarden.io
 HelmChart: kubewarden-controller
 Vendor: SUSE
 DisplayName: Kubewarden Controller
-```
-#### Multiple Release Streams
-```yaml
-HelmRepo: https://charts.kubewarden.io
-HelmChart: kubewarden-controller
-Vendor: SUSE
-DisplayName: Kubewarden Controller
-Fetch: newer
-TrackVersions:
-  - 0.4
-  - 1.0
-  - 1.1
-ChartMetadata:
-  kubeVersion: '>=1.21-0'
-  icon: https://www.kubewarden.io/images/icon-kubewarden.svg
-```
-
-### Artifact Hub
-```yaml
-ArtifactHubRepo: kubewarden
-ArtifactHubPackage: kubewarden-controller
-Vendor: SUSE
-DisplayName: Kubewarden Controller
-ChartMetadata:
-  kubeVersion: '>=1.21-0'
-  icon: https://www.kubewarden.io/images/icon-kubewarden.svg
 ```
 
 ### Git Repo
