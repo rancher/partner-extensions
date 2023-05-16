@@ -1,206 +1,138 @@
-# Certified Partner Rancher Extensions
+# Partner Extensions
 
- 
+This repository is reserved for Rancher Extensions created by Rancher Partners.  Extensions were introduced with Rancher 2.7.0. 
 
-### 1. Definition:
+The "Tested & Certified -- Rancher Extension" certification is part of the SUSE "Tested & Certified" product certification framework and it aims to address the growing need for a standardized, high-quality, and reliable ecosystem of Rancher Extensions that augment the capabilities of the Rancher by SUSE platform.
 
- Rancher Extensions are designed to enhance and expand the
- functionality of Rancher, enabling partners to develop and integrate
- innovative features while ensuring seamless compatibility with the
- core platform. 
+## Requirements
 
- The "Tested & Certified -- Rancher Extension" certification is part of
- the SUSE "Tested & Certified" product certification framework and it
- aims to address the growing need for a standardized, high-quality, and
- reliable ecosystem of [Rancher
- Extensions](https://rancher.github.io/dashboard/extensions/introduction)
- that augment the capabilities of the [Rancher by
- SUSE](https://www.rancher.com/products/rancher) platform.
- This guide provides step-by-step instructions for [SUSE
- partners](https://www.suse.com/partners/) on how to
- certify their Rancher Extensions developed for use with Rancher. 
-
-  
-
- The rationale behind the Rancher Extensions certification is to
- establish a set of guidelines, best practices, and validation
- processes that partners can follow to guarantee the quality,
- compatibility, and reliability of their Rancher Extensions. By
- adhering to the certification criteria, partners demonstrate their
- commitment to maintaining the high standards expected within the
- Rancher ecosystem. This certification process also encourages
- innovation and collaboration among partners, fostering a vibrant and
- growing ecosystem of Rancher Extensions that can cater to a wide range
- of use cases and customer needs. 
-
-  
-
- Furthermore, the Rancher Extensions certification helps build trust
- and recognition among customers by providing a clear indication of
- which Rancher Extensions have been thoroughly vetted and endorsed by
- SUSE. This assurance allows customers to make more informed decisions
- when selecting Rancher Extensions to deploy in their Rancher
- environments. 
-
-  
-
-<ins> _The "Tested & Certified -- Rancher Extension" certification aims
-to:_ </ins> 
-
--   _Ensure Compatibility:_ This certification verifies that Rancher
-     Extensions developed by SUSE partners are fully compatible with
-     the Rancher platform, facilitating seamless integration and
-     reducing the likelihood of conflicts or issues. 
-
--   _Maintain Quality Standards:_ The Rancher Extensions certification
-     ensures that certified extensions adhere to best practices and
-     meet the quality standards set forth by SUSE and the Rancher
-     community, providing a consistent and reliable user experience. 
-
--   _Foster Innovation:_ By encouraging the development of certified
-     Rancher Extensions, this certification promotes innovation and the
-     continuous improvement of the Rancher ecosystem. 
-
--   _Simplify Deployment and Management:_ The certification process
-     validates that Rancher Extensions can be easily deployed, managed,
-     and updated within the Rancher platform, offering a streamlined
-     experience for partners and end-users. 
-
--   _Support:_ Partners with certified Rancher Extensions are expected
-     to maintain and support their extensions, ensuring that Rancher
-     customers have access to expert assistance when needed. 
-
--   _Build Trust and Recognition:_ The Rancher Extensions
-     certification serves as a mark of quality and trust, demonstrating
-     to customers that the certified extension meets industry standards
-     and is backed by SUSE\'s endorsement. 
-
-  
-
- By obtaining the "Tested & Certified -- Rancher Extension"
- certification, partners can showcase their commitment to delivering
- high-quality, innovative, and reliable Rancher Extensions, while
- benefiting from the comprehensive product certification framework
- within the [SUSE One Partner
- Program](https://www.suse.com/partners/). 
-
- 
-
-### 2.  Certification Prerequisites:
-
-
-1.  A Kubernetes cluster running Rancher by SUSE -- check out
-         [K3s](https://k3s.io/) and
-         [RKE2](https://docs.rke2.io/) if you haven't picked
-         a Kubernetes distribution yet 
+* Charts must be Helm 3 compatible.
     
-    
-2.  Familiarity with
-         [Kubernetes](https://kubernetes.io/docs/home/),
-         [Rancher](https://ranchermanager.docs.rancher.com/),
-        and [Rancher
-         UI](https://rancher.github.io/dashboard/home)
-         concepts -- check out the [Rancher
-         Academy](https://www.rancher.academy/) on latest
-         free, community training for Kubernetes & Rancher 
 
- 
-
-### 3. Certification Testing:
-1. All certification testing on latest stable release of Rancher 
-2. All certification testing done against latest supported
-     version of RKE2 and/or K3s 
-
- 
-
-### 4. Certification Workflow 
+* Chart must be in a hosted [Helm](https://helm.sh/docs/topics/chart_repository/) or Git repository that we can reference.
 
 
-1.  <ins>Prepare for Certification:</ins> Complete the general and
-           Rancher Extensions-specific certification prerequisites to ensure
-           that the extension is ready for the certification process. 
-      
-      
-     -  _Review Rancher Extension Guidelines:_ Thoroughly study the
-                [official Rancher Extensions
-                documentation](https://rancher.github.io/dashboard/extensions/introduction)
-                and ensure that the extension adheres to the guidelines and best
-                practices outlined, including proper use of Rancher APIs, UI
-                components, and other platform-specific features. 
-           
-           
-     -  _Integration Testing:_ Conduct integration testing to ensure the
-                Rancher Extension works seamlessly with the core Rancher platform
-                and other certified Rancher Extensions (where applicable) 
-           
-           
-     -  _Security and Compliance:_ Ensure that the Rancher Extension
-                complies with relevant security standards and guidelines,
-                safeguarding customer data and maintaining the security of the
-                overall Rancher environment. 
-           
-           
-     -  _Performance and Scalability:_ Validate that the Rancher Extension
-                performs efficiently and effectively under various workloads, and
-                can scale as needed to support larger deployments. 
-           
-           
-     -  _Extension Documentation:_ Prepare thorough documentation for the
-                Rancher Extension, detailing installation, configuration, usage,
-                and troubleshooting, as well as any Rancher-specific
-                considerations. 
- 
-           
-2.  <ins>Submit Request:</ins> Submit a certification request to
-           SUSE, providing necessary details about the Rancher Extension,
-           including documentation, compatibility information, and any other
-           relevant materials. 
-      
-        
-      
-3.  <ins>Initial Review:</ins> SUSE will conduct an initial review of
-           the submitted materials, evaluating the extension\'s adherence to
-           guidelines, best practices, and compatibility with Rancher. SUSE
-           may request additional information or clarifications at this
-           stage. 
-      
-        
-      
-4.  <ins>Certification Testing:</ins> Upon passing the initial
-           review, the Rancher Extension will undergo a series of
-           certification tests by SUSE to validate functionality,
-           compatibility, performance, security, and other relevant aspects. 
-      
-        
-      
-5.  <ins>Address Issues:</ins> If any issues are identified during
-           the certification testing, partners must address these issues and
-           resubmit the extension for retesting until it passes all the
-           necessary certification tests. 
-      
-        
-      
-6.  <ins>Certification Approval:</ins> Once the Rancher Extension
-           passes all certification tests, SUSE will grant the Rancher
-           Extensions certification and provide the partner with a
-           certification badge that can be displayed on their website,
-           product materials, and other marketing collateral.  Your Rancher
-           Extension certification will be also listed in the [SUSE Partner
-           Certification and Solutions Catalog
-           (PCSC)](https://www.suse.com/susePSC/home) 
-      
-        
-      
-7.  <ins>Continuous Maintenance:</ins> After receiving the
-           certification, partners must continuously maintain and update
-           their Rancher Extension to ensure ongoing compatibility with
-           Rancher updates and compliance with the certification criteria. 
-      
-        
-      
-8.  <ins>Recertification:</ins> Partners may need to go through a
-           recertification process if significant updates are made to the
-           extension or if new versions of Rancher are released that may
-           impact compatibility. SUSE will provide guidelines on when
-           recertification is necessary. 
-      
+## Workflow
+
+#### 1. Fork the [Partner Extensions](https://github.com/rancher/partner-charts/) repository, clone your fork, checkout the **main** branch and pull the latest changes. 
+Then create a new branch off of main
+
+#### 2. Create subdirectories in `packages` in the form of `<vendor>/<chart>`
+```bash
+cd partner-charts
+mkdir -p packages/suse/kubewarden-controller
+
+```
+#### 3. Create your [upstream.yaml](#configuration-file) in `packages/<vendor>/<chart>`
+
+The tool reads a configuration yaml, `upstream.yaml`, to know where to fetch the upstream chart. This file is also able to define any alterations for valid variables in the Chart.yaml as described by [Helm](https://helm.sh/docs/topics/charts/#the-chartyaml-file).
+
+Some [example upstream.yaml](#examples) are provided below
+```bash
+cat <<EOF > packages/suse/kubewarden-controller/upstream.yaml
+HelmRepo: https://charts.kubewarden.io
+HelmChart: kubewarden-controller
+Vendor: SUSE
+DisplayName: Kubewarden Controller
+ChartMetadata:  
+  icon: https://www.kubewarden.io/images/icon-kubewarden.svg
+EOF
+```
+#### 4. Commit your packages directory
+```bash
+git add packages/suse/kubewarden-controller
+git commit -m "Submitting suse/kubewarden-controller"
+```
+#### 6. Test your configuration
+1. In Rancher UI > Extensions > Kebab menu (3 dot) > Manage repositories, add your github repository
+2. Go to Hamburger menu > Extensions and your extension should be listed under "Available." Install the extension
+#### 7. Push your commit
+```bash
+git push origin <your_branch>
+```
+#### 8. Open a pull request to **main** branch
+
+## Configuration File
+
+Options for `upstream.yaml`
+| Variable | Requires | Description |
+| ------------- | ------------- |------------- |
+| ArtifactHubPackage | ArtifactHubRepo | Defines the package to pull from the defined ArtifactHubRepo
+| ArtifactHubRepo | ArtifactHubPackage | Defines the repo to access on Artifact Hub
+| AutoInstall | | Allows setting a required additional chart to deploy prior to current chart, such as a dedicated CRDs chart
+| ChartMetadata | | Allows setting/overriding the value of any valid [Chart.yaml variable](https://helm.sh/docs/topics/charts/#the-chartyaml-file)
+| DisplayName | | Sets the name the chart will be listed under in the Rancher UI
+| Experimental | | Adds the 'experimental' annotation which adds a flag on the UI entry
+| Fetch | HelmChart, HelmRepo | Selects set of charts to pull from upstream.<br />- **latest** will pull only the latest chart version *default*<br />- **newer** will pull all newer versions than currently stored<br />- **all** will pull all versions
+| GitBranch | GitRepo | Defines which branch to pull from the upstream GitRepo
+| GitHubRelease | GitRepo | If true, will pull latest GitHub release from repo. Requires GitHub URL
+| GitRepo | | Defines the git repo to pull from
+| GitSubdirectory | GitRepo | Allows selection of a subdirectory of the upstream git repo to pull the chart from
+| HelmChart | HelmRepo | Defines which chart to pull from the upstream Helm repo
+| HelmRepo | HelmChart | Defines the upstream Helm repo to pull from
+| Hidden | | Adds the 'hidden' annotation which hides the chart from the Rancher UI
+| Namespace | | Addes the 'namespace' annotation which hard-codes a deployment namespace for the chart
+| PackageVersion | | Used to generate new patch version of chart
+| ReleaseName | | Sets the value of the release-name Rancher annotation. Defaults to the chart name
+| TrackVersions | HelmChart, HelmRepo | Allows selection of multiple *Major.Minor* versions to track from upstream independently.
+| Vendor | | Sets the vendor name providing the chart
+
+## Examples
+### Helm Repo
+#### Minimal Requirements
+```yaml
+HelmRepo: https://charts.kubewarden.io
+HelmChart: kubewarden-controller
+Vendor: SUSE
+DisplayName: Kubewarden Controller
+```
+#### Multiple Release Streams
+```yaml
+HelmRepo: https://charts.kubewarden.io
+HelmChart: kubewarden-controller
+Vendor: SUSE
+DisplayName: Kubewarden Controller
+Fetch: newer
+TrackVersions:
+  - 0.4
+  - 1.0
+  - 1.1
+ChartMetadata:
+  kubeVersion: '>=1.21-0'
+  icon: https://www.kubewarden.io/images/icon-kubewarden.svg
+```
+
+### Artifact Hub
+```yaml
+ArtifactHubRepo: kubewarden
+ArtifactHubPackage: kubewarden-controller
+Vendor: SUSE
+DisplayName: Kubewarden Controller
+ChartMetadata:
+  kubeVersion: '>=1.21-0'
+  icon: https://www.kubewarden.io/images/icon-kubewarden.svg
+```
+
+### Git Repo
+```yaml
+GitRepo: https://github.com/kubewarden/helm-charts.git
+GitBranch: main
+GitSubdirectory: charts/kubewarden-controller
+Vendor: SUSE
+DisplayName: Kubewarden Controller
+ChartMetadata:
+  kubeVersion: '>=1.21-0'
+  icon: https://www.kubewarden.io/images/icon-kubewarden.svg
+```
+
+### GitHub Release
+```yaml
+GitRepo: https://github.com/kubewarden/helm-charts.git
+GitHubRelease: true
+GitSubdirectory: charts/kubewarden-controller
+Vendor: SUSE
+DisplayName: Kubewarden Controller
+ChartMetadata:
+  kubeVersion: '>=1.21-0'
+  icon: https://www.kubewarden.io/images/icon-kubewarden.svg
+```
