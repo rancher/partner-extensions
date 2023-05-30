@@ -1,0 +1,5 @@
+GitRepo: https://github.com/nflondo/my-app.git
+GitBranch: gh-pages
+GitSubdirectory: charts/test
+Vendor: SUSE
+DisplayName: my-app
