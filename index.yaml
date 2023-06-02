@@ -1,5 +1,27 @@
 apiVersion: v1
 entries:
+  appone:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/display-name: appone
+      catalog.cattle.io/kube-version: '>= 1.16.0-0 < 1.26.0-0'
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.7.0-0 < 2.8.0-0'
+      catalog.cattle.io/release-name: appone
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+    apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-06-02T15:35:05.971998762-06:00"
+    description: appone plugin
+    digest: be2f13f934279281d2bf01815340244b6936373ebe1eff31f8dcf3e665477e76
+    name: appone
+    type: application
+    urls:
+    - assets/tibio/appone-0.1.0.tgz
+    version: 0.1.0
   my-app:
   - annotations:
       catalog.cattle.io/certified: rancher
