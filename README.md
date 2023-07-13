@@ -8,7 +8,6 @@ The "Tested & Certified -- Rancher Extension" certification is part of the SUSE 
 
 * Charts must be Helm 3 compatible.
 
-
 * Chart must be in a hosted [Helm](https://helm.sh/docs/topics/chart_repository/) or Git repository that we can reference.
 
 
