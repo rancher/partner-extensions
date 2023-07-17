@@ -1,5 +1,0 @@
-GitRepo: https://github.com/nflondo/my-app.git
-GitBranch: gh-pages
-GitSubdirectory: charts/test/0.0.1
-Vendor: Rancher
-DisplayName: my-app extension
