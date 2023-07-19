@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  kamaji:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/kube-version: '>= 1.16.0-0 < 1.26.0-0'
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.7.0-0 < 2.8.0-0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+    apiVersion: v2
+    appVersion: 0.1.2
+    created: "2023-07-19T10:32:28.577287775Z"
+    description: Deploys and operates Kubernetes Control Plane at scale with a fraction
+      of the operational burden
+    digest: 1199ecfa531098165387ec3c2b88d50696f249a62d3bd2d9f1c94757aa9bc84b
+    icon: https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/kamaji/0.1.2-icon-kamaji.svg
+    name: kamaji
+    type: application
+    urls:
+    - assets/kamaji/kamaji-0.1.2.tgz
+    version: 0.1.2
+generated: "2023-07-19T10:32:28.576789169Z"

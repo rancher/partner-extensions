@@ -1,0 +1,4 @@
+plugin/img/icon.ccfe9b3e.svg
+plugin/kamaji-0.1.2.umd.min.js
+plugin/kamaji-0.1.2.umd.min.js.map
+plugin/package.json
