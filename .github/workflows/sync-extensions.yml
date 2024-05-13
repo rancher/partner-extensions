@@ -31,11 +31,6 @@ jobs:
         with:
           version: v3.12.1
 
-      - name: Setup yq
-        uses: chrisdickinson/setup-yq@v1.0.1
-        with:
-          yq-version: v4.34.2
-
       - name: Run sync script
         shell: bash
         id: sync_script
