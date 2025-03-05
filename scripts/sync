@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 BASE_DIR="$( cd $SCRIPT_DIR && cd .. & pwd)"
@@ -117,6 +118,26 @@ do
       echo "      Version already synced"
     else
       echo "     + Copying version ${VERSION}"
+      echo "listing folders in ./tmp"
+      echo ""
+      ls -la ./tmp
+      echo ""
+      echo "listing folders in ./tmp/${NAME}"
+      echo ""
+      ls -la ./tmp/${NAME}
+      echo ""
+      echo "listing folders in ./tmp/${NAME}/extensions"
+      echo ""
+      ls -la ./tmp/${NAME}/extensions
+      echo ""
+      echo "listing folders in ./tmp/${NAME}/extensions/${NAME}"
+      echo ""
+      ls -la ./tmp/${NAME}/extensions/${NAME}
+      echo ""
+      echo "listing folders in ./tmp/${NAME}/extensions/${NAME}/${VERSION}"
+      echo ""
+      ls -la ./tmp/${NAME}/extensions/${NAME}/${VERSION}
+      echo ""
       # cp ./tmp/${NAME}/extensions/${NAME}/${NAME}-${VERSION}.tgz ./assets/${NAME}
       cp -R ./tmp/${NAME}/extensions/${NAME}/${VERSION} ./extensions/${NAME}/${VERSION}
       cp -R ./tmp/${NAME}/charts/${NAME}/${VERSION} ./charts/${NAME}/${VERSION}
