@@ -1,5 +1,14 @@
 {
   "extensions": {
+    "cloudcasa": {
+      "repo": "catalogicsoftware/cloudcasa-rancher-extension",
+      "branch": "gh-pages",
+      "versions": [
+        "0.4.0",
+        "0.4.1",
+        "1.0.0"
+      ]
+    },
     "kamaji": {
       "repo": "clastix/rancher-extension-clastix",
       "branch": "gh-pages",
