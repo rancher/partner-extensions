@@ -90,10 +90,10 @@ do
   mkdir -p ./charts/${NAME}
   mkdir -p ./extensions/${NAME}
 
-  # Get repository name, branch, and versions 
-  REPO=$(jq -r ".extensions.${NAME}.repo" manifest.json)
-  EXT_BRANCH=$(jq -r ".extensions.${NAME}.branch" manifest.json)
-  VERSIONS=$(jq -r ".extensions.${NAME}.versions[]" manifest.json)
+  # Get repository name, branch, and versions
+  REPO=$(jq -r ".extensions.\"${NAME}\".repo" manifest.json)
+  EXT_BRANCH=$(jq -r ".extensions.\"${NAME}\".branch" manifest.json)
+  VERSIONS=$(jq -r ".extensions.\"${NAME}\".versions[]" manifest.json)
   VFORMAT=$(echo $VERSIONS | tr '\n' ' ')
 
   echo -e "     Repository: ${REPO}"
@@ -155,7 +155,7 @@ do
       CHART_FILE=./charts/${NAME}/${VERSION}/Chart.yaml
 
       ICON=$(sed -nr 's/icon: (.*)/\1/p' ${CHART_FILE})
-      
+
       if [ -n "${ICON}" ]; then
         # Downloading icon
         ICON_FILE=$(basename $ICON)
@@ -181,7 +181,7 @@ do
       echo "     + Updating Helm index"
 
       # --------------------------------------------------------------------------------
-      # Update the helm index just for this chart 
+      # Update the helm index just for this chart
       # --------------------------------------------------------------------------------
       if [ -f "${HELM_INDEX}" ]; then
         UPDATE="--merge ${HELM_INDEX}"
