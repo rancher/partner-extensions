@@ -118,26 +118,6 @@ do
       echo "      Version already synced"
     else
       echo "     + Copying version ${VERSION}"
-      echo "listing folders in ./tmp"
-      echo ""
-      ls -la ./tmp
-      echo ""
-      echo "listing folders in ./tmp/${NAME}"
-      echo ""
-      ls -la ./tmp/${NAME}
-      echo ""
-      echo "listing folders in ./tmp/${NAME}/extensions"
-      echo ""
-      ls -la ./tmp/${NAME}/extensions
-      echo ""
-      echo "listing folders in ./tmp/${NAME}/extensions/${NAME}"
-      echo ""
-      ls -la ./tmp/${NAME}/extensions/${NAME}
-      echo ""
-      echo "listing folders in ./tmp/${NAME}/extensions/${NAME}/${VERSION}"
-      echo ""
-      ls -la ./tmp/${NAME}/extensions/${NAME}/${VERSION}
-      echo ""
       # cp ./tmp/${NAME}/extensions/${NAME}/${NAME}-${VERSION}.tgz ./assets/${NAME}
       cp -R ./tmp/${NAME}/extensions/${NAME}/${VERSION} ./extensions/${NAME}/${VERSION}
       cp -R ./tmp/${NAME}/charts/${NAME}/${VERSION} ./charts/${NAME}/${VERSION}
@@ -154,7 +134,7 @@ do
       # Check the chart file for an icon
       CHART_FILE=./charts/${NAME}/${VERSION}/Chart.yaml
 
-      ICON=$(sed -nr 's/icon: (.*)/\1/p' ${CHART_FILE})
+      ICON=$(yq eval '.icon' ${CHART_FILE})
 
       if [ -n "${ICON}" ]; then
         # Downloading icon
@@ -167,7 +147,15 @@ do
 
         NEW_ICON=https://raw.githubusercontent.com/${REPOSITORY}/${BRANCH}/${ICON_REL}
 
-        sed -i.bak -e 's@icon:.*@icon: '"$NEW_ICON"'@' ${CHART_FILE}
+        # Check if '>-' exists in the icon property to remove the second line
+        if grep -q 'icon: >-' "${CHART_FILE}"; then
+          SECOND_LINE=$(sed -n '/^icon: >-/{n;p;q}' "${CHART_FILE}")
+          sed -i.bak '/^icon: >-/{n;d;}' "${CHART_FILE}"
+          sed -i -e 's@icon:.*@icon: '"${NEW_ICON}"'@' ${CHART_FILE}
+        else
+          sed -i.bak -e 's@icon:.*@icon: '"${NEW_ICON}"'@' ${CHART_FILE}
+        fi
+
         rm -rf ${CHART_FILE}.bak
 
         PKG_FILE=${BASE_DIR}/extensions/${NAME}/${VERSION}/plugin/package.json
