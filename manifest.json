@@ -14,6 +14,13 @@
         "0.1.2",
         "0.2.0"
       ]
+    },
+    "nutanix": {
+      "repo": "nutanix-cloud-native/nutanix-rancher-extension",
+      "branch": "gh-pages",
+      "versions": [
+        "1.0.0"
+      ]
     }
   }
 }
