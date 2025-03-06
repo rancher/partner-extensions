@@ -1,5 +1,13 @@
 {
   "extensions": {
+    "app-launcher": {
+      "repo": "krumIO/krum-rancher-extensions",
+      "branch": "gh-pages",
+      "versions": [
+        "0.1.34",
+        "0.2.2"
+      ]
+    },
     "cloud-casa-extension": {
       "repo": "catalogicsoftware/cloudcasa-rancher-extension",
       "branch": "gh-pages",
