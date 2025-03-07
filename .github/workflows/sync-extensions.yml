@@ -10,6 +10,7 @@ on:
 env:
   ACTIONS_RUNNER_DEBUG: false
   CI_COMMIT_MESSAGE: CI Build Artifacts
+  GH_TOKEN: ${{ github.token }}
 
 jobs:
   sync:
