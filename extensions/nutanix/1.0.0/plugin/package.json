@@ -1,0 +1,20 @@
+{
+  "name": "nutanix",
+  "description": "Nutanix Node Driver UI",
+  "icon": "https://raw.githubusercontent.com/nutanix-cloud-native/nutanix-rancher-extension/main/pkg/nutanix/assets/icon-nutanix.svg",
+  "version": "1.0.0",
+  "private": false,
+  "rancher": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0"
+  },
+  "files": [
+    "**/*"
+  ],
+  "main": "nutanix-1.0.0.umd.min.js"
+}
