@@ -1,5 +1,5 @@
 {
-  "trigger": 2,
+  "trigger": 3,
   "extensions": {
     "cloud-casa-extension": {
       "repo": "catalogicsoftware/cloudcasa-rancher-extension",
