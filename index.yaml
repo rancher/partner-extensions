@@ -65,4 +65,26 @@ entries:
     urls:
     - assets/kamaji/kamaji-0.1.2.tgz
     version: 0.1.2
-generated: "2025-03-06T16:26:56.288153028Z"
+  nutanix:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/kube-version: '>= 1.16.0-0'
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.10.0-0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-07T13:33:32.218995214Z"
+    description: Nutanix Node Driver UI
+    digest: e7f2cb87998fea06a292ad6a855c87c572303d6d16c4707f669888976b702e9e
+    icon: https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/nutanix/1.0.0-icon-nutanix.svg
+    name: nutanix
+    type: application
+    urls:
+    - assets/nutanix/nutanix-1.0.0.tgz
+    version: 1.0.0
+generated: "2025-03-07T13:33:32.218655385Z"
