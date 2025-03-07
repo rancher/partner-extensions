@@ -46,14 +46,14 @@ jobs:
         run: |
           git checkout -b sync-${{ env.NOW }}
           git add ./{assets,charts,extensions,icons,index.yaml}
-          git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+          git commit -a -m "Sync extensions ${{ env.NOW }}"
           git push origin sync-${{ env.NOW }}
 
       - name: Create Pull Request
         run: |
           # Create the PR using the GitHub CLI
           pr_number=$(gh pr create \
-            --title "Create PR for extension sync: ${{ env.CI_COMMIT_MESSAGE }}" \
+            --title "Create PR for extension sync: ${{ env.NOW }}" \
             --body "This PR was automatically created by a GitHub Action." \
             --base main \
             --head sync-${{ env.NOW }} \
@@ -67,8 +67,13 @@ jobs:
           fi
           
           # Store the PR number as an output
-          echo "pr_number=$pr_number" >> $GITHUB_OUTPUT
+          echo "PR_NUMBER=$pr_number" >> $GITHUB_ENV
 
+      - name: Merge Pull Request
+        run: |
+          # Merge the PR using the GitHub CLI
+          gh pr merge ${{ env.PR_NUMBER }} --delete-branch --merge --repo ${{ github.repository }}
+  
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
         with:
@@ -76,13 +81,3 @@ jobs:
         env:
           CR_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           CR_SKIP_EXISTING: true
-
-  merge-pr:
-    needs: sync
-    runs-on: ubuntu-latest
-    steps:
-      - name: Merge Pull Request
-        run: |
-          # Merge the PR using the GitHub CLI
-          gh pr merge ${{ needs.create-pr.outputs.pr_number }} --merge --repo ${{ github.repository }}
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
