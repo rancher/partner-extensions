@@ -39,10 +39,15 @@ jobs:
           chmod +x ./scripts/sync
           ./scripts/sync
 
-      - name: Commit Changes
+      - name: Generate branch name based on date and time
+        run: echo "NOW=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_ENV
+
+      - name: Commit Changes and push to a branch
         run: |
+          git checkout -b sync-${{ env.NOW }}
           git add ./{assets,charts,extensions,icons,index.yaml}
           git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+          git push origin sync-${{ env.NOW }}
 
       - name: Create Pull Request
         run: |
@@ -51,7 +56,7 @@ jobs:
             --title "Create PR for extension sync: ${{ env.CI_COMMIT_MESSAGE }}" \
             --body "This PR was automatically created by a GitHub Action." \
             --base main \
-            --head ${{ github.ref_name }} \
+            --head sync-${{ env.NOW }} \
             --fill \
             --repo ${{ github.repository }} | awk '{print $NF}') # Get the PR URL and Extract the last element (the PR number)
 
