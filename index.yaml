@@ -12,6 +12,27 @@ entries:
       catalog.cattle.io/ui-component: plugins
       catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
     apiVersion: v2
+    appVersion: 1.0.2
+    created: "2025-03-11T12:06:11.204535533Z"
+    description: CloudCasa One-Click Installation and Monitoring for Rancher Clusters.
+    digest: 7ee97b934532abb619913ed3cac30299274294eaae4a99122c36716db05296bd
+    icon: https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/cloud-casa-extension/1.0.2-icon.svg
+    name: cloud-casa-extension
+    type: application
+    urls:
+    - assets/cloud-casa-extension/cloud-casa-extension-1.0.2.tgz
+    version: 1.0.2
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/display-name: CloudCasa
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.10.0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    apiVersion: v2
     appVersion: 1.0.1
     created: "2025-03-06T16:26:56.288592918Z"
     description: CloudCasa One-Click Installation and Monitoring for Rancher Clusters.
@@ -109,4 +130,4 @@ entries:
     urls:
     - assets/nutanix/nutanix-1.0.0.tgz
     version: 1.0.0
-generated: "2025-03-07T16:32:02.512704451Z"
+generated: "2025-03-11T12:06:11.204165334Z"
