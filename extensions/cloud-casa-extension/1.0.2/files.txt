@@ -1,0 +1,6 @@
+plugin/cloud-casa-extension-1.0.2.umd.min.js
+plugin/cloud-casa-extension-1.0.2.umd.min.js.map
+plugin/img/full-logo-black.219eb04e.svg
+plugin/img/full-logo-white.39e74409.png
+plugin/img/logo.dff57afd.svg
+plugin/package.json
