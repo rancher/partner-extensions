@@ -12,6 +12,27 @@ entries:
       catalog.cattle.io/ui-component: plugins
       catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
     apiVersion: v2
+    appVersion: 1.0.2
+    created: "2025-03-11T12:06:11.204535533Z"
+    description: CloudCasa One-Click Installation and Monitoring for Rancher Clusters.
+    digest: 7ee97b934532abb619913ed3cac30299274294eaae4a99122c36716db05296bd
+    icon: https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/cloud-casa-extension/1.0.2-icon.svg
+    name: cloud-casa-extension
+    type: application
+    urls:
+    - assets/cloud-casa-extension/cloud-casa-extension-1.0.2.tgz
+    version: 1.0.2
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/display-name: CloudCasa
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.10.0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    apiVersion: v2
     appVersion: 1.0.1
     created: "2025-03-06T16:26:56.288592918Z"
     description: CloudCasa One-Click Installation and Monitoring for Rancher Clusters.
@@ -65,4 +86,92 @@ entries:
     urls:
     - assets/kamaji/kamaji-0.1.2.tgz
     version: 0.1.2
-generated: "2025-03-06T16:26:56.288153028Z"
+  nutanix:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/kube-version: '>= 1.16.0-0'
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.10.0-0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    apiVersion: v2
+    appVersion: 1.1.0
+    created: "2025-03-21T14:18:03.309429644Z"
+    description: Nutanix UI Extension provides a seamless interface for configuring
+      Rancher clusters on Nutanix Cloud Platform
+    digest: d082ca8b9f57996481dd3245a02264567475b02208803461c40fbac5fa84020b
+    icon: https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/nutanix/1.1.0-icon-nutanix.svg
+    name: nutanix
+    type: application
+    urls:
+    - assets/nutanix/nutanix-1.1.0.tgz
+    version: 1.1.0
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/kube-version: '>= 1.16.0-0'
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.10.0-0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    apiVersion: v2
+    appVersion: 1.0.2
+    created: "2025-03-13T10:45:24.986883687Z"
+    description: Nutanix UI Extension provides a seamless interface for configuring
+      Rancher clusters on Nutanix Cloud Platform
+    digest: 6b3c55169a5b6b51e656da1e828ad652113614ebe1bdbe7f27e3578b04fda42d
+    icon: https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/nutanix/1.0.2-icon-nutanix.svg
+    name: nutanix
+    type: application
+    urls:
+    - assets/nutanix/nutanix-1.0.2.tgz
+    version: 1.0.2
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/kube-version: '>= 1.16.0-0'
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.10.0-0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    apiVersion: v2
+    appVersion: 1.0.1
+    created: "2025-03-07T16:32:02.513142417Z"
+    description: Nutanix UI Extension provides a seamless interface for configuring
+      Rancher clusters on Nutanix Cloud Platform
+    digest: f7a56b7b024bf333a4db55b0408e6f84cc24d1e22adbda93ca3a6c2fe07ae97f
+    icon: https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/nutanix/1.0.1-icon-nutanix.svg
+    name: nutanix
+    type: application
+    urls:
+    - assets/nutanix/nutanix-1.0.1.tgz
+    version: 1.0.1
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/kube-version: '>= 1.16.0-0'
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.10.0-0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-07T13:33:32.218995214Z"
+    description: Nutanix Node Driver UI
+    digest: e7f2cb87998fea06a292ad6a855c87c572303d6d16c4707f669888976b702e9e
+    icon: https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/nutanix/1.0.0-icon-nutanix.svg
+    name: nutanix
+    type: application
+    urls:
+    - assets/nutanix/nutanix-1.0.0.tgz
+    version: 1.0.0
+generated: "2025-03-21T14:18:03.308966597Z"

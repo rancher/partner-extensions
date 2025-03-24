@@ -1,4 +1,5 @@
 {
+  "trigger": 7,
   "extensions": {
     "app-launcher": {
       "repo": "krumIO/krum-rancher-extensions",
@@ -12,7 +13,8 @@
       "repo": "catalogicsoftware/cloudcasa-rancher-extension",
       "branch": "gh-pages",
       "versions": [
-        "1.0.1"
+        "1.0.1",
+        "1.0.2"
       ]
     },
     "kamaji": {
@@ -27,7 +29,10 @@
       "repo": "nutanix-cloud-native/nutanix-rancher-extension",
       "branch": "gh-pages",
       "versions": [
-        "1.0.0"
+        "1.0.0",
+        "1.0.1",
+        "1.0.2",
+        "1.1.0"
       ]
     }
   }
