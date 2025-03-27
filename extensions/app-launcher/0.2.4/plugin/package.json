@@ -1,0 +1,21 @@
+{
+  "name": "app-launcher",
+  "description": "App Launcher extension for Rancher",
+  "version": "0.2.4",
+  "private": false,
+  "rancher": true,
+  "author": "Krumware",
+  "icon": "https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/app-launcher/0.2.4-icon.svg",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "5.0.8",
+    "@vue/cli-service": "5.0.8",
+    "@vue/cli-plugin-typescript": "5.0.8"
+  },
+  "files": [
+    "**/*"
+  ],
+  "main": "app-launcher-0.2.4.umd.min.js"
+}
