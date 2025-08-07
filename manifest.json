@@ -17,7 +17,7 @@
         "1.0.2"
       ]
     },
-    "codezero": {
+    "codezero-rancher-extension": {
       "repo": "c6o/codezero-rancher-extension",
       "branch": "gh-pages",
       "versions": [
