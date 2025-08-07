@@ -88,6 +88,49 @@ entries:
     urls:
     - assets/cloud-casa-extension/cloud-casa-extension-1.0.1.tgz
     version: 1.0.1
+  codezero-rancher-extension:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/display-name: Codezero
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.10.0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    apiVersion: v2
+    appVersion: 0.1.1
+    created: "2025-08-07T08:50:59.912991639Z"
+    description: Codezero One-Click Installation for Rancher Clusters.
+    digest: afebb3c1315be4205295a97ce6f4177fc33a2c8a1e7e09490cc240333e5b52e8
+    icon: https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/codezero-rancher-extension/0.1.1-logo.svg
+    name: codezero-rancher-extension
+    type: application
+    urls:
+    - assets/codezero-rancher-extension/codezero-rancher-extension-0.1.1.tgz
+    version: 0.1.1
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/display-name: Codezero
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.10.0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    apiVersion: v2
+    appVersion: 0.1.0
+    created: "2025-08-07T08:50:59.772824244Z"
+    description: Codezero One-Click Installation for Rancher Clusters.
+    digest: 738027f45119818d9090270e60b3421f69c4ea38ea7b55cf79630c7153917b35
+    icon: https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/codezero-rancher-extension/0.1.0-logo.svg
+    name: codezero-rancher-extension
+    type: application
+    urls:
+    - assets/codezero-rancher-extension/codezero-rancher-extension-0.1.0.tgz
+    version: 0.1.0
   kamaji:
   - annotations:
       catalog.cattle.io/certified: rancher
@@ -219,4 +262,4 @@ entries:
     urls:
     - assets/nutanix/nutanix-1.0.0.tgz
     version: 1.0.0
-generated: "2025-03-27T08:35:08.307424311Z"
+generated: "2025-08-07T08:50:59.912586509Z"
