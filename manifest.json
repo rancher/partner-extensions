@@ -17,6 +17,14 @@
         "1.0.2"
       ]
     },
+    "codezero-rancher-extension": {
+      "repo": "c6o/codezero-rancher-extension",
+      "branch": "gh-pages",
+      "versions": [
+        "0.1.0",
+        "0.1.1"
+      ]
+    },
     "kamaji": {
       "repo": "clastix/rancher-extension-clastix",
       "branch": "gh-pages",
