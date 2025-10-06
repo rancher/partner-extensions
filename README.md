@@ -64,13 +64,6 @@ Required properties for `manifest.json`
 ```json
 {
   "extensions": {
-    "kamaji": {
-      "repo": "clastix/rancher-extension-clastix",
-      "branch": "gh-pages",
-      "versions": [
-        "0.1.2"
-      ]
-    },
     "elemental": {
       "repo": "rancher/elemental-ui",
       "branch": "main",

@@ -25,14 +25,6 @@
         "0.1.1"
       ]
     },
-    "kamaji": {
-      "repo": "clastix/rancher-extension-clastix",
-      "branch": "gh-pages",
-      "versions": [
-        "0.1.2",
-        "0.2.0"
-      ]
-    },
     "nutanix": {
       "repo": "nutanix-cloud-native/nutanix-rancher-extension",
       "branch": "gh-pages",
