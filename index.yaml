@@ -160,6 +160,29 @@ entries:
       catalog.cattle.io/namespace: cattle-ui-plugin-system
       catalog.cattle.io/os: linux
       catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.13.1-0 || >= 2.12.5-0 < 2.13.0-0 ||
+        >= 2.11.8-0 < 2.12.0-0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    apiVersion: v2
+    appVersion: 1.1.3
+    created: "2025-12-19T14:19:12.188462169Z"
+    description: Nutanix UI Extension provides a seamless interface for configuring
+      Rancher clusters on Nutanix Cloud Platform
+    digest: b1ec0bb3439502950998068a0e1c4b60669f817ed6bdd81969af8038ca441b3c
+    icon: https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/nutanix/1.1.3-icon-nutanix.svg
+    name: nutanix
+    type: application
+    urls:
+    - https://github.com/rancher/partner-extensions/releases/download/nutanix-1.1.3/nutanix-1.1.3.tgz
+    version: 1.1.3
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/kube-version: '>= 1.16.0-0'
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
       catalog.cattle.io/rancher-version: '>= 2.10.0-0'
       catalog.cattle.io/scope: management
       catalog.cattle.io/ui-component: plugins
@@ -263,4 +286,4 @@ entries:
     urls:
     - https://github.com/rancher/partner-extensions/releases/download/nutanix-1.0.0/nutanix-1.0.0.tgz
     version: 1.0.0
-generated: "2025-10-10T11:04:40.904423866Z"
+generated: "2025-12-19T14:19:12.188495391Z"
