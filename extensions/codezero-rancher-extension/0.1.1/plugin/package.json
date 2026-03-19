@@ -1,0 +1,20 @@
+{
+  "name": "codezero-rancher-extension",
+  "description": "Codezero One-Click Installation for Rancher Clusters.",
+  "version": "0.1.1",
+  "private": false,
+  "rancher": true,
+  "icon": "https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/codezero-rancher-extension/0.1.1-logo.svg",
+  "engines": {
+    "node": ">=16"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0"
+  },
+  "files": [
+    "**/*"
+  ],
+  "main": "codezero-rancher-extension-0.1.1.umd.min.js"
+}

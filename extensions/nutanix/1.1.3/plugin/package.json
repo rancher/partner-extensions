@@ -1,0 +1,20 @@
+{
+  "name": "nutanix",
+  "description": "Nutanix UI Extension provides a seamless interface for configuring Rancher clusters on Nutanix Cloud Platform",
+  "icon": "https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/nutanix/1.1.3-icon-nutanix.svg",
+  "version": "1.1.3",
+  "private": false,
+  "rancher": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0"
+  },
+  "files": [
+    "**/*"
+  ],
+  "main": "nutanix-1.1.3.umd.min.js"
+}

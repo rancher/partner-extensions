@@ -1,0 +1,6 @@
+plugin/codezero-rancher-extension-0.1.1.umd.min.37.js
+plugin/codezero-rancher-extension-0.1.1.umd.min.37.js.map
+plugin/codezero-rancher-extension-0.1.1.umd.min.js
+plugin/codezero-rancher-extension-0.1.1.umd.min.js.map
+plugin/img/logo.f39952a7.svg
+plugin/package.json

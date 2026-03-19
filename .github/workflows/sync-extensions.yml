@@ -10,6 +10,7 @@ on:
 env:
   ACTIONS_RUNNER_DEBUG: false
   CI_COMMIT_MESSAGE: CI Build Artifacts
+  GH_TOKEN: ${{ github.token }}
 
 jobs:
   sync:
@@ -38,12 +39,41 @@ jobs:
           chmod +x ./scripts/sync
           ./scripts/sync
 
-      - name: Commit build
-        run: |
-          git add ./{assets,charts,extensions,icons,index.yaml}
-          git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-          git push
+      - name: Generate branch name based on date and time
+        run: echo "NOW=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_ENV
 
+      - name: Commit Changes and push to a branch
+        run: |
+          git checkout -b sync-${{ env.NOW }}
+          git add ./{assets,charts,extensions,icons,index.yaml}
+          git commit -a -m "Sync extensions ${{ env.NOW }}"
+          git push origin sync-${{ env.NOW }}
+
+      - name: Create Pull Request
+        run: |
+          # Create the PR using the GitHub CLI
+          pr_number=$(gh pr create \
+            --title "Create PR for extension sync: ${{ env.NOW }}" \
+            --body "This PR was automatically created by a GitHub Action." \
+            --base main \
+            --head sync-${{ env.NOW }} \
+            --fill \
+            --repo ${{ github.repository }} | awk '{print $NF}') # Get the PR URL and Extract the last element (the PR number)
+
+          # Check if pr_number is empty (creation failed)
+          if [ -z "$pr_number" ]; then
+            echo "Failed to create PR."
+            exit 1
+          fi
+          
+          # Store the PR number as an output
+          echo "PR_NUMBER=$pr_number" >> $GITHUB_ENV
+
+      - name: Merge Pull Request when approved
+        run: |
+          # Merge the PR using the GitHub CLI
+          gh pr merge ${{ env.PR_NUMBER }} --auto --delete-branch --merge --repo ${{ github.repository }}
+  
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
         with:

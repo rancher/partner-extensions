@@ -1,0 +1,16 @@
+plugin/img/icon-nutanix.4a7741be.svg
+plugin/nutanix-1.1.1.umd.min.156.js
+plugin/nutanix-1.1.1.umd.min.156.js.map
+plugin/nutanix-1.1.1.umd.min.21.js
+plugin/nutanix-1.1.1.umd.min.21.js.map
+plugin/nutanix-1.1.1.umd.min.37.js
+plugin/nutanix-1.1.1.umd.min.37.js.map
+plugin/nutanix-1.1.1.umd.min.60.js
+plugin/nutanix-1.1.1.umd.min.60.js.map
+plugin/nutanix-1.1.1.umd.min.cloud-credential.js
+plugin/nutanix-1.1.1.umd.min.cloud-credential.js.map
+plugin/nutanix-1.1.1.umd.min.js
+plugin/nutanix-1.1.1.umd.min.js.map
+plugin/nutanix-1.1.1.umd.min.machine-config.js
+plugin/nutanix-1.1.1.umd.min.machine-config.js.map
+plugin/package.json
