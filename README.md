@@ -4,20 +4,13 @@ This repository is reserved for Rancher Extensions created by Rancher Partners. 
 
 ### What are the requirements for adding a project to this repository?
 
-TODO: Confirm with Troy - verified partner
-
-TODO: Confirm with Troy - how supply and track business contact (if not included below)?
-
 Before submitting an extension to this repository, you must become a
 [SUSE "Ready" Verified partner](https://www.suse.com/product-certification/ready/certify-your-applications/).
 You can start this process with a [Partner Application](https://partner.suse.com/s/apply).
 
 To certify your extension as SUSE "Ready", you need to attest that the software:
 
-* Has been tested on RKE2 or K3s and publishes documentation showing supported versions, including
-  * version of Rancher (e.g. 2.11) 
-  * Rancher-supported distribution of Kubernetes (RKE2, K3s, EKS, etc.)
-  * version of Kubernetes (e.g. 1.32)
+* Has been tested on supported versions of Rancher e.g. 2.15 
 * Is supported by your organization on the declared Rancher versions and configurations
 * Is actively maintained and proactively updated
   * critical vulnerabilities are patched in a timely way
@@ -31,10 +24,10 @@ Once your extension is certified as SUSE "Ready", there are a few more requireme
 * The extension helm chart needs to be available from a public github repository
 * Extension must include appropriate metadata. For more information on metadata see [here](https://extensions.rancher.io/extensions/next/api/metadata). This includes but not exclusively
   * An extension icon
+  * A meaningful display name
+  * A concise description
   * Compatibility annotations. For more information see [here](https://extensions.rancher.io/extensions/next/extensions-configuration#configurable-annotations)
 * Be compatible with at least the current version of Rancher  
-
-TODO: require description, home url, maintainers in package.json
 
 Meeting these requirements ensures that Rancher users can easily deploy your extension.
 
@@ -95,13 +88,17 @@ git push origin <your_branch>
 
 Once your pull request is approved and merged, an automated workflow will sync this repository with the build assets from the supplied repository within the `manifest.json` file. When fully synced, a new release will be created and added to the [releases](https://github.com/rancher/partner-extensions/releases) section. 
 
-## Extension Review
+## SUSE Extension Review
+
+Once the pull request is open SUSE will review the extension and consider the following
 
 - Understand scope and functionality
 - Impact on security, scaling and performance
 - Code Review
 - UX Review
-- Documentation and test approach TODO: Confirm, do we include these?
+- Extension documentation and test approach
+
+After review SUSE may request changes to your extension based on the above.
 
 ## Appendix
 
