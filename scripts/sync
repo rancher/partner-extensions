@@ -17,17 +17,17 @@ CLEAN=false
 
 # Validation function for icon URLs to prevent SSRF attacks
 validate_icon_url() {
-  local url=$1
+  local url="$1"
 
-  # Enforce HTTPS protocol
   if [[ ! "$url" =~ ^https:// ]]; then
-    echo "Error: Icon URL must use HTTPS protocol"
+    echo "Rejected icon URL (not HTTPS): $url"
     return 1
   fi
 
-  # Host allowlist - only allow GitHub domains
-  if [[ ! "$url" =~ ^https://(raw\.githubusercontent\.com|github\.com)/ ]]; then
-    echo "Error: Icon URL must be from github.com or raw.githubusercontent.com"
+  # Ensure URL strictly starts with allowed hosts and immediately follows with a slash
+  # to prevent SSRF vulnerabilities using userinfo (@) or port (:) tricks.
+  if [[ ! "$url" =~ ^https://(raw\.githubusercontent\.com|github\.com)(/.*) ]]; then
+    echo "Rejected icon URL (host not allowed, must be raw.githubusercontent.com or github.com): $url"
     return 1
   fi
 
@@ -155,9 +155,9 @@ do
 
       ICON=$(yq eval '.icon' ${CHART_FILE})
 
-      if [ -n "${ICON}" ]; then
+      if [ -n "${ICON}" ] && [ "${ICON}" != "null" ]; then
         # Downloading icon
-        ICON_FILE=$(basename $ICON)
+        ICON_FILE=$(basename "$ICON")
         echo "     + Fetching icon: ${ICON}"
         ICON_REL=icons/${NAME}/${VERSION}-${ICON_FILE}
         mkdir -p ${BASE_DIR}/icons/${NAME}
@@ -165,8 +165,13 @@ do
         # Validate and download the icon - ignore errors, we will handle those
         set +e
         if validate_icon_url "${ICON}"; then
-          curl --proto '=https' --proto-redir '=https' --location --silent --output "${BASE_DIR}/${ICON_REL}" "${ICON}"
+          EFFECTIVE_URL=$(curl --proto '=https' --proto-redir '=https' --fail --location --silent --output "${BASE_DIR}/${ICON_REL}" --write-out '%{url_effective}' "${ICON}")
           ERR=$?
+          if [ $ERR -eq 0 ] && ! validate_icon_url "${EFFECTIVE_URL}"; then
+            echo -e "${YELLOW}${BOLD}Warning: Redirected icon URL failed validation - discarding${RESET}"
+            rm -f "${BASE_DIR}/${ICON_REL}"
+            ERR=1
+          fi
         else
           echo -e "${YELLOW}${BOLD}Warning: Icon URL failed validation - skipping download${RESET}"
           ERR=1
