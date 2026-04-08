@@ -15,6 +15,25 @@ ORG=rancher
 BRANCH=main
 CLEAN=false
 
+# Validation function for icon URLs to prevent SSRF attacks
+validate_icon_url() {
+  local url="$1"
+
+  if [[ ! "$url" =~ ^https:// ]]; then
+    echo "Rejected icon URL (not HTTPS): $url"
+    return 1
+  fi
+
+  # Ensure URL strictly starts with allowed hosts and immediately follows with a slash
+  # to prevent SSRF vulnerabilities using userinfo (@) or port (:) tricks.
+  if [[ ! "$url" =~ ^https://(raw\.githubusercontent\.com|github\.com)(/.*) ]]; then
+    echo "Rejected icon URL (host not allowed, must be raw.githubusercontent.com or github.com): $url"
+    return 1
+  fi
+
+  return 0
+}
+
 usage() {
   echo "Usage: $0 [<options>]"
   echo " options:"
@@ -136,18 +155,28 @@ do
 
       ICON=$(yq eval '.icon' ${CHART_FILE})
 
-      if [ -n "${ICON}" ]; then
+      if [ -n "${ICON}" ] && [ "${ICON}" != "null" ]; then
         # Downloading icon
-        ICON_FILE=$(basename $ICON)
+        ICON_FILE=$(basename "$ICON")
         echo "     + Fetching icon: ${ICON}"
         ICON_REL=icons/${NAME}/${VERSION}-${ICON_FILE}
         mkdir -p ${BASE_DIR}/icons/${NAME}
         rm -f ${BASE_DIR}/${ICON_REL}
-        # Download the icon - ignore errors, we will handle those
+        # Validate and download the icon - ignore errors, we will handle those
         set +e
-        wget --quiet -O ${BASE_DIR}/${ICON_REL} ${ICON}
-        ERR=$?
-        set -1
+        if validate_icon_url "${ICON}"; then
+          EFFECTIVE_URL=$(curl --proto '=https' --proto-redir '=https' --fail --location --silent --output "${BASE_DIR}/${ICON_REL}" --write-out '%{url_effective}' "${ICON}")
+          ERR=$?
+          if [ $ERR -eq 0 ] && ! validate_icon_url "${EFFECTIVE_URL}"; then
+            echo -e "${YELLOW}${BOLD}Warning: Redirected icon URL failed validation - discarding${RESET}"
+            rm -f "${BASE_DIR}/${ICON_REL}"
+            ERR=1
+          fi
+        else
+          echo -e "${YELLOW}${BOLD}Warning: Icon URL failed validation - skipping download${RESET}"
+          ERR=1
+        fi
+        set -e
 
         # Icon downloaded okay
         if [ ${ERR} -eq 0 ]; then
