@@ -131,6 +131,28 @@ entries:
     urls:
     - https://github.com/rancher/partner-extensions/releases/download/codezero-rancher-extension-0.1.0/codezero-rancher-extension-0.1.0.tgz
     version: 0.1.0
+  epinio:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/display-name: Epinio
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.10.0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    apiVersion: v2
+    appVersion: 1.13.10
+    created: "2026-04-23T15:08:41.246852084Z"
+    description: A Rancher Extension of The Application Development Engine for Kubernetes
+    digest: 2e31d2def0ad1ec48da8510bee320a97d48f8fe3c88fcb680a6d947193bc0ac5
+    icon: https://raw.githubusercontent.com/rancher/partner-extensions/main/icons/epinio/1.13.10-logo-epinio.svg
+    name: epinio
+    type: application
+    urls:
+    - https://github.com/rancher/partner-extensions/releases/download/epinio-1.13.10/epinio-1.13.10.tgz
+    version: 1.13.10
   kamaji:
   - annotations:
       catalog.cattle.io/certified: rancher
@@ -332,4 +354,4 @@ entries:
     urls:
     - https://github.com/rancher/partner-extensions/releases/download/nutanix-1.0.0/nutanix-1.0.0.tgz
     version: 1.0.0
-generated: "2026-03-13T19:08:50.584128155Z"
+generated: "2026-04-23T15:08:41.246891263Z"
