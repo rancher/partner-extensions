@@ -22,7 +22,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v3
 
       - name: Configure Git
         run: |
@@ -30,7 +30,7 @@ jobs:
           git config user.email github-actions@github.com
       
       - name: Setup Helm
-        uses: azure/setup-helm@5119fcb9089d432beecbf79bb2c7915207344b78 # v3
+        uses: azure/setup-helm@9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310 # v5.0.1
         with:
           version: v3.12.1
 
@@ -77,7 +77,7 @@ jobs:
           gh pr merge ${{ env.PR_NUMBER }} --auto --delete-branch --merge --repo ${{ github.repository }}
   
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@be16258da8010256c6e82849661221415f031968 # v1.5.0
+        uses: helm/chart-releaser-action@cae68fefc6b5f367a0275617c9f83181ba54714f # v1.7.0
         with:
           charts_dir: ./charts/*
         env:
