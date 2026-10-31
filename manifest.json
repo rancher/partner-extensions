@@ -49,6 +49,13 @@
         "1.14.2",
         "1.14.3"
       ]
+    },
+    "libredb-studio": {
+      "repo": "libredb/libredb-studio-rancher-extension",
+      "branch": "gh-pages",
+      "versions": [
+        "0.1.0"
+      ]
     }
   }
 }
